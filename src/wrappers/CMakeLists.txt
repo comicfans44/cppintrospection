@@ -28,7 +28,7 @@ function(add_wrapper _module)
 		list(APPEND SOURCES "${outfile}")		
 	endforeach()
 	add_library(osgwrapper_${_module} MODULE ${SOURCES})
-	target_link_libraries(osgwrapper_${_module} ${LIBRARIES})
+	target_link_libraries(osgwrapper_${_module} ${LIBRARIES} cppintrospection)
 	add_dependencies(osgwrapper_${_module} generate_wrappers)
 	add_dependencies(wrappers osgwrapper_${_module})
 
